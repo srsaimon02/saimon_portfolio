@@ -1,0 +1,295 @@
+/* -- RESET & BASE -- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #1E293B;
+    background-color: #F8FAFC;
+    line-height: 1.7;
+}
+
+/* -- HEADER -- */
+
+header {
+    background-color: #0D9488;
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+/* -- NAV -- */
+
+nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* -- MAIN SECTION -- */
+main {
+    max-width: 800px;
+    max-width: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0F766E;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #CCFBF1;
+    padding-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* -- SKILLS -- */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+li span {
+  background-color: #CCFBF1;
+  color: #0F766E;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* -- PROJECTS GRID -- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+
+
+.card h3 {
+    font-size: 20px;
+    color: #1E293B;
+}
+
+.card p {
+    font-size: 15px;
+    color: #64748B;
+    flex-grow: 1;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-tags span {
+  background-color: #F1F5F9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.card a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0D9488;
+    text-decoration: none;
+}
+
+.card a:hover {
+    opacity: 0.7;
+}
+
+/* -- Colour Palette Generator -- */
+
+.palette {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+.swatch {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.swatch:hover {
+    transform: scale(1.05);
+
+}
+
+#generate-btn {
+    background-color: #0D9488;
+    color: white;
+    border: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+#generate-btn:hover {
+    opacity: 0.85;
+}
+
+/* -- LINKS -- */
+
+a {
+    color: #0D9488;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+/* -- FOOTER -- */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    color: #64748B;
+    border-top: 1px solid #E2E8F0;
+}
+
+/* -- ANIMATIONS -- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+section {
+    animation: fadeInUp 0,6s ease forwards;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    transition: opacity 0.2s ease;
+}
+
+/* -- RESPONSIVE -- */
+
+@media (max-width: 600px) {
+    header {
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
