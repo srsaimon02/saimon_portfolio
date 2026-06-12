@@ -10,22 +10,32 @@ body {
     font-family: Georgia, serif;
     font-size: 18px;
     color: #1E293B;
-    background-color: #F8FAFC;
+    background-color: #071628;
     line-height: 1.7;
 }
 
 /* -- HEADER -- */
 
 header {
-    background-color: #0D9488;
+    background-color: #0a1f3d;
+    background:
+    radial-gradient(circle at 20% 30%, rgba(26, 160, 240, 0.15), transparent 50%), 
+    radial-gradient(circle at 80% 70%, rgba(196, 21, 37, 0.1), transparent 50%),
+    #071628;
     color: white;
     padding: 60px 40px;
     text-align: center;
+    
 }
+
 
 header h1 {
     font-size: 48px;
     margin-bottom: 10px;
+      background: linear-gradient(to right, #ffffff, #1aa0f0, #c41525);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 header p {
@@ -43,7 +53,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #0f8fe8;
     text-decoration: none;
     font-size: 16px;
     letter-spacing: 1px;
@@ -51,14 +61,22 @@ nav a {
 }
 
 nav a:hover {
-    opacity: 0.7;
+    opacity: 0.7;;
 }
+
 
 /* -- MAIN SECTION -- */
 main {
-    max-width: 800px;
-    max-width: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 40px 20px;
+}
+
+
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
 }
 
 section {
@@ -67,15 +85,23 @@ section {
 
 h2 {
     font-size: 28px;
-    color: #0F766E;
+    color: #0f8fe8;
     margin-bottom: 16px;
-    border-bottom: 2px solid #CCFBF1;
     padding-bottom: 8px;
 }
+ h2:after {
+    content: "";
+    background-image: linear-gradient(to right, #ffffff 70%, #e8192c 100%);
+    height: 2px;
+    width: 96px;
+    display: block;
+ }
 
 p {
+    color: #cbd5e1;
     margin-bottom: 12px;
 }
+
 
 ul {
     padding-left: 24px;
@@ -89,18 +115,39 @@ li {
 ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
 li span {
-  background-color: #CCFBF1;
-  color: #0F766E;
   padding: 6px 16px;
   border-radius: 20px;
-  font-size: 15px;
-  font-weight: bold;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li span img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+li span p {
+    color: #cbcbcb;
+    font-size: 10px;
+    align-content: center;
+    margin-top: 4px;
+}
+
+li span:hover {
+    transform: translateY(-6px);
+    box-shadow: 3px 3px 6px rgba(196, 21, 37, 0.4);
 }
 
 /* -- PROJECTS GRID -- */
@@ -112,7 +159,7 @@ li span {
 }
 
 .card {
-    background-color: white;
+    
     border: 1px solid #E2E8F0;
     border-radius: 12px;
     padding: 24px;
@@ -123,15 +170,14 @@ li span {
 
 
 
-
 .card h3 {
     font-size: 20px;
-    color: #1E293B;
+    color: #0f8fe8;
 }
 
 .card p {
     font-size: 15px;
-    color: #64748B;
+    color: #cbd5e1;
     flex-grow: 1;
 }
 
@@ -141,18 +187,18 @@ li span {
     gap: 8px;
 }
 
+
 .card-tags span {
-  background-color: #F1F5F9;
-  color: #475569;
+  background-color: #1e3a5f;
+  color: #93c5fd;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 13px;
 }
-
 .card a {
     font-size: 14px;
     font-weight: bold;
-    color: #0D9488;
+    color: #1aa0f0;
     text-decoration: none;
 }
 
@@ -183,6 +229,8 @@ li span {
     font-weight: bold;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
+    border: none;
+    font-family: inherit;
 }
 
 .swatch:hover {
@@ -191,9 +239,9 @@ li span {
 }
 
 #generate-btn {
-    background-color: #0D9488;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
-    border: none;
+    border: 1px solid #1aa0f0;
     padding: 12px 8px;
     border-radius: 8px;
     font-size: 16px;
@@ -203,13 +251,14 @@ li span {
 }
 
 #generate-btn:hover {
-    opacity: 0.85;
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(196, 21, 37, 1);
 }
 
 /* -- LINKS -- */
 
 a {
-    color: #0D9488;
+    color: #1aa0f0;
 }
 
 a:hover{
@@ -223,7 +272,7 @@ footer {
     padding: 30px;
     font-size: 14px;
     color: #64748B;
-    border-top: 1px solid #E2E8F0;
+    border-top: 1px solid #1e3a5f;
 }
 
 /* -- ANIMATIONS -- */
@@ -243,7 +292,7 @@ header {
 }
 
 section {
-    animation: fadeInUp 0,6s ease forwards;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .card {
@@ -252,10 +301,18 @@ section {
   animation-delay: 0.1s;
 }
 
+
+#generate-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.1s;
+}
+
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(196, 21, 37, 0.4);
 }
+
 
 nav a {
     transition: opacity 0.2s ease;

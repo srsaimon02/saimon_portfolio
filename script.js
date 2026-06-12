@@ -36,7 +36,7 @@ function generatePalette(){
     for(let i = 0; i < 5; i++) {
         const colour = randomColour();
 
-        const swatch = document.createElement("div");
+        const swatch = document.createElement("button");
         swatch.classList.add("swatch");
         swatch.style.backgroundColor = colour;
         swatch.textContent = colour;
@@ -54,6 +54,7 @@ function generatePalette(){
     }
 
 }
+
 
 const generateBtn = document.querySelector("#generate-btn");
 generateBtn.addEventListener("click", generatePalette);

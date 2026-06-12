@@ -1,0 +1,18 @@
+<svg width="500" height="500" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <title>Abstract logo - electric blue, deep navy and vivid red</title>
+  <desc>A geometric abstract logo with deep near-black navy and electric vivid blues, light greys, crisp white and a vivid red accent with dashed orbit rings</desc>
+
+  <rect x="120" y="200" width="280" height="280" rx="6" fill="#0a1f3d" transform="rotate(18 260 340)"/>
+  <polygon points="340,90 525,285 340,465 195,285" fill="#0f8fe8"/>
+  <rect x="220" y="240" width="200" height="200" rx="4" fill="#071628" transform="rotate(45 320 340)"/>
+  <rect x="240" y="240" width="200" height="200" rx="4" fill="#1aa0f0" transform="rotate(30 340 340)"/>
+  <polygon points="185,455 262,215 300,215 223,455" fill="#6b7f96" opacity="0.85"/>
+  <polygon points="292,205 320,205 243,458 215,458" fill="#94a8bc" opacity="0.65"/>
+  <polygon points="315,198 328,198 252,460 239,460" fill="#ffffff" opacity="0.85"/>
+  <polygon points="400,255 448,195 475,235 422,305" fill="#e8192c"/>
+  <polygon points="425,318 465,272 492,310 448,368" fill="#c41525" opacity="0.9"/>
+  <circle cx="445" cy="205" r="10" fill="#ffffff" opacity="0.95"/>
+  <circle cx="225" cy="425" r="8" fill="#e8192c" opacity="0.95"/>
+  <circle cx="340" cy="340" r="200" fill="none" stroke="#5a7fa0" stroke-width="1.5" stroke-dasharray="28 14" opacity="0.6"/>
+  <circle cx="340" cy="340" r="240" fill="none" stroke="#3d6080" stroke-width="1" stroke-dasharray="14 28" opacity="0.45"/>
+</svg>

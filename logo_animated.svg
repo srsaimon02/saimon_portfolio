@@ -1,0 +1,90 @@
+<svg width="500" height="500" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <title>Animated Saimon logo - elements falling into place</title>
+  <desc>Abstract logo with each element dropping into position one by one, with spinning rings</desc>
+
+  <defs>
+    <style>
+      @keyframes dropIn {
+        0%   { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0px); }
+      }
+      @keyframes slideIn {
+        0%   { opacity: 0; transform: translateX(40px); }
+        100% { opacity: 1; transform: translateX(0px); }
+      }
+      @keyframes fadeIn {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      #l1 { animation: dropIn 0.7s 0.1s both cubic-bezier(0.22,1,0.36,1); }
+      #l2 { animation: dropIn 0.7s 0.45s both cubic-bezier(0.22,1,0.36,1); }
+      #l3 { animation: dropIn 0.7s 0.8s both cubic-bezier(0.22,1,0.36,1); }
+      #l4 { animation: dropIn 0.7s 1.1s both cubic-bezier(0.22,1,0.36,1); }
+      #l5 { animation: dropIn 0.6s 1.4s both cubic-bezier(0.22,1,0.36,1); }
+      #l6 { animation: dropIn 0.6s 1.6s both cubic-bezier(0.22,1,0.36,1); }
+      #l7 { animation: dropIn 0.5s 1.8s both cubic-bezier(0.22,1,0.36,1); }
+      #l8 { animation: slideIn 0.6s 2.1s both cubic-bezier(0.22,1,0.36,1); }
+      #l9 { animation: dropIn 0.5s 2.3s both cubic-bezier(0.22,1,0.36,1); }
+      #l10 { animation: dropIn 0.5s 2.5s both cubic-bezier(0.22,1,0.36,1); }
+      #l11 { animation: fadeIn 0.9s 2.8s both; }
+      #l12 { animation: fadeIn 0.9s 3.1s both; }
+    </style>
+  </defs>
+
+  <g id="l1">
+    <rect x="120" y="200" width="280" height="280" rx="6" fill="#0a1f3d" transform="rotate(18 260 340)"/>
+  </g>
+
+  <g id="l2">
+    <polygon points="340,90 525,285 340,465 195,285" fill="#0f8fe8"/>
+  </g>
+
+  <g id="l3">
+    <rect x="220" y="240" width="200" height="200" rx="4" fill="#071628" transform="rotate(45 320 340)"/>
+  </g>
+
+  <g id="l4">
+    <rect x="240" y="240" width="200" height="200" rx="4" fill="#1aa0f0" transform="rotate(30 340 340)"/>
+  </g>
+
+  <g id="l5">
+    <polygon points="185,455 262,215 300,215 223,455" fill="#6b7f96" opacity="0.85"/>
+  </g>
+
+  <g id="l6">
+    <polygon points="292,205 320,205 243,458 215,458" fill="#94a8bc" opacity="0.65"/>
+  </g>
+
+  <g id="l7">
+    <polygon points="315,198 328,198 252,460 239,460" fill="#ffffff" opacity="0.85"/>
+  </g>
+
+  <g id="l8">
+    <polygon points="400,255 448,195 475,235 422,305" fill="#e8192c"/>
+  </g>
+
+  <g id="l9">
+    <polygon points="425,318 465,272 492,310 448,368" fill="#c41525" opacity="0.9"/>
+  </g>
+
+  <g id="l10">
+    <circle cx="445" cy="205" r="10" fill="#ffffff" opacity="0.95"/>
+    <circle cx="225" cy="425" r="8" fill="#e8192c" opacity="0.95"/>
+  </g>
+
+  <!-- inner ring fades in then spins -->
+  <g id="l11">
+    <circle cx="340" cy="340" r="200" fill="none" stroke="#5a7fa0" stroke-width="1.5" stroke-dasharray="28 14" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 340 340" to="360 340 340" dur="25s" begin="3.7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- outer ring fades in then spins -->
+  <g id="l12">
+    <circle cx="340" cy="340" r="240" fill="none" stroke="#3d6080" stroke-width="1" stroke-dasharray="14 28" opacity="0.45">
+      <animateTransform attributeName="transform" type="rotate" from="0 340 340" to="-360 340 340" dur="38s" begin="4.0s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+</svg>
