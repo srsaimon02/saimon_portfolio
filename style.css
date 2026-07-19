@@ -9,7 +9,7 @@
 body {
     font-family: Georgia, serif;
     font-size: 18px;
-    color: #1E293B;
+    color: #cbd5e1;
     background-color: #071628;
     line-height: 1.7;
 }
@@ -17,7 +17,6 @@ body {
 /* -- HEADER -- */
 
 header {
-    background-color: #0a1f3d;
     background:
     radial-gradient(circle at 20% 30%, rgba(26, 160, 240, 0.15), transparent 50%), 
     radial-gradient(circle at 80% 70%, rgba(196, 21, 37, 0.1), transparent 50%),
@@ -32,10 +31,10 @@ header {
 header h1 {
     font-size: 48px;
     margin-bottom: 10px;
-      background: linear-gradient(to right, #ffffff, #1aa0f0, #c41525);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, #ffffff, #1aa0f0, #c41525);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 header p {
@@ -61,7 +60,7 @@ nav a {
 }
 
 nav a:hover {
-    opacity: 0.7;;
+    opacity: 0.7;
 }
 
 
@@ -76,7 +75,7 @@ main {
 
 .about {
     display: grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
 }
 
 section {
@@ -88,8 +87,9 @@ h2 {
     color: #0f8fe8;
     margin-bottom: 16px;
     padding-bottom: 8px;
+    
 }
- h2:after {
+ h2::after {
     content: "";
     background-image: linear-gradient(to right, #ffffff 70%, #e8192c 100%);
     height: 2px;
@@ -98,14 +98,12 @@ h2 {
  }
 
 p {
-    color: #cbd5e1;
     margin-bottom: 12px;
 }
 
 
-ul {
-    padding-left: 24px;
-}
+/* have logo like a sun and all skills orbitting around it*/
+
 
 li {
     margin-bottom: 8px;
@@ -116,7 +114,7 @@ ul {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
 
@@ -160,7 +158,7 @@ li span:hover {
 
 .card {
     
-    border: 1px solid #E2E8F0;
+    border: 1px solid #1e3a5f;
     border-radius: 12px;
     padding: 24px;
     display: flex;
@@ -177,7 +175,6 @@ li span:hover {
 
 .card p {
     font-size: 15px;
-    color: #cbd5e1;
     flex-grow: 1;
 }
 
@@ -248,12 +245,66 @@ li span:hover {
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.1s;
 }
 
 #generate-btn:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 12px rgba(196, 21, 37, 1);
 }
+
+/* -- QUIZ APP -- */
+
+.quiz-box {
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+.quiz-progress{
+    font-size: 14px;
+    color: #94a8bc;
+    margin-bottom: 8px;
+}
+
+.quiz-question {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quiz-options button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1aa0f0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.quiz-options button:hover {
+    background-color: rgba(26, 160, 240, 0.15);
+}
+
+.quiz-score {
+    font-size: 14px;
+    color: #1aa0f0;
+}
+
 
 /* -- LINKS -- */
 
@@ -302,12 +353,6 @@ section {
 }
 
 
-#generate-btn {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.1s;
-}
-
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(196, 21, 37, 0.4);
@@ -349,4 +394,9 @@ nav a {
     h2 {
         font-size: 22px;
     }
+
+    ul { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }

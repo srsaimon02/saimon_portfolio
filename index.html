@@ -11,14 +11,10 @@
 
     <!-- Header -->
         <header>
-            <div class="logo">
-                <section id="logo"><img src="logo_animated.svg" alt="logo"></section>
-                <p>3rd Year computer science....starting from square 1</p>
-            </div>
-            <div class="header-name">
-                <h1>Saimon</h1>
-            </div>
-        <divc class="navbar">
+            <img id="logo" src="logo_animated.svg" alt="logo">
+            <h1>Saimon</h1>
+            <p>3rd Year computer science....starting from square 1</p>
+        <div class="navbar">
             <nav>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -31,8 +27,7 @@
 
     <main>
 
-        <section id="first-section">
-        <div class="about">
+        <div id="first-section">
         <!-- About -->
          <section id="about">
             <h2>About ME</h2>
@@ -44,9 +39,10 @@
          </section>
          <!-- Skills -->
           <section id="skills">
+            <h2>Skills</h2>
             <ul>
                 <li><span><img src="icons/html5.svg" alt="html"><p>HTML</p></span></li>
-                <li><span><img src="icons/javascript.svg" alt="javascript"><p>JAVACRIPT</p></span></li>
+                <li><span><img src="icons/javascript.svg" alt="javascript"><p>JAVASCRIPT</p></span></li>
                 <li><span><img src="icons/java.svg" alt="java"><p>JAVA</p></span></li>
                 <li><span><img src="icons/python.svg" alt="python"><p>PYTHON</p></span></li>
                 <li><span><img src="icons/c.svg" alt="c"><p>C</p></span></li>
@@ -55,8 +51,8 @@
                 <li><span><img src="icons/databricks.svg" alt="databases"><p>DATA STRUCTURE</p></span></li>
             </ul>
         </section>
-        </div>
-        </section>
+    
+    </div>
 
           <!-- Colour Palette Generator -->
 
@@ -68,6 +64,20 @@
 
             <button id="generate-btn">Generate Palette</button>
 
+          </section>
+
+          <!-- Quiz App -->
+
+          <section id="quiz">
+            <h2>Quiz App</h2>
+            <p>Test your knowledge of web development basics.</p>
+
+            <div class="quiz-box">
+                <p class="quiz-progress" id="quiz-progress"></p>
+                <h3 class="quiz-question" id="quiz-question"></h3>
+                <div class="quiz-options" id="quiz-options"></div>
+                <p class="quiz-score" id="quiz-score"></p>
+            </div>
           </section>
 
 
@@ -84,7 +94,7 @@
                         <span>CSS</span>
                         <span>Javascript</span>
                     </div>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="#" target="_blank">View Project</a> <!--Change href links to actual projects-->
                 </div>
 
                 <div class="card">
@@ -94,7 +104,7 @@
                         <span>Javascript</span>
                         <span>Algorithms</span>
                     </div>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="#" target="_blank">View Project</a> <!--Change href links to actual projects-->
                 </div>
 
                 <div class="card">
@@ -104,7 +114,7 @@
                         <span>Javascript</span>
                         <span>Graphs</span>
                     </div>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="#" target="_blank">View Project</a> <!--Change href links to actual projects-->
                 </div>
             
             </div>
@@ -122,7 +132,7 @@
 
          <!--Footer-->
         <footer>
-            <p>Saimon &copy; 2025 | </p>
+            <p>Saimon &copy; 2025 </p>
         </footer>
         <script src="script.js"></script>
     </body>
