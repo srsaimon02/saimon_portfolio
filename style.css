@@ -305,6 +305,45 @@ li span:hover {
     color: #1aa0f0;
 }
 
+/* -- SORTING VISUALISER -- */
+.sort-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 300px;
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+}
+
+.bar {
+    flex: 1;
+    background: #1aa0f0;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.1s ease;
+}
+
+.sort-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.sort-controls button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1aa0f0;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sort-controls button:hover {
+    background-color: rgba(25, 160, 240, 0.15);
+}
 
 /* -- LINKS -- */
 

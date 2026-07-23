@@ -110,7 +110,7 @@ function handleAnswer(selectedIndex){
 
 }
 
-    function showFinalScore() {
+function showFinalScore() {
         quizProgressEl.textContent = "Quiz Completed!";
         quizOptionsEl.innerHTML = "";
         quizScoreEl.textContent = `Final score: ${score} out of ${quizQuestions.length}`;
@@ -118,5 +118,84 @@ function handleAnswer(selectedIndex){
 
     }
 
+
+function bubbleSort(arr){
+    const n = arr.length;
+
+    for (let i = 0; i < n - 1; i++){
+        for (let j = 0; j < n - 1 - i; j++){
+            if(arr[j] > arr[j + 1]){
+
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    return arr;
+}
+
+const testArray = [3, 4, 1, 9, 6]
+console.log(bubbleSort(testArray));
+
 showQuestion();
 
+// -- SORTING VISUALISER --
+
+const sortBarsEl = document.querySelector("#sort-bars");
+const generateArrayBtn = document.querySelector("#generate-array-btn");
+
+let sortArray = [];
+
+function generateArray(){
+    sortArray = [];
+
+    for (let i=0; i < 20; i++) {
+        const randomValue = Math.floor(Math.random() * 100) + 1;
+        sortArray.push(randomValue);
+    }
+
+    displayBars();
+}
+
+function displayBars(){
+    sortBarsEl.innerHTML = "";
+
+    for (let i=0; i < sortArray.length; i++){
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.style.height = `${sortArray[i]}%`;
+        sortBarsEl.appendChild(bar);
+    }
+}
+
+const sortBtn = document.querySelector("#sort-btn");
+
+async function animatedBubbleSort() {
+    const n = sortArray.length;
+
+    for (let i = 0; i < n -1; i++) {
+        for (let j = 0; j < n - 1 - i; j++){
+            if (sortArray[j] > sortArray[j +1]) {
+                const temp = sortArray[j];
+                sortArray[j] = sortArray[j+1];
+                sortArray[j+1] = temp;
+
+                displayBars();
+                await sleep(50); //add a slider to increase the speed or decrease
+            }
+        }
+    }
+}
+
+
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+sortBtn.addEventListener("click", animatedBubbleSort);
+
+generateArrayBtn.addEventListener("click", generateArray);
+
+generateArray();
