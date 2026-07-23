@@ -145,10 +145,12 @@ showQuestion();
 
 const sortBarsEl = document.querySelector("#sort-bars");
 const generateArrayBtn = document.querySelector("#generate-array-btn");
-
 let sortArray = [];
+let isSorting = false;
 
 function generateArray(){
+    if (isSorting) return;
+    
     sortArray = [];
 
     for (let i=0; i < 20; i++) {
@@ -173,6 +175,9 @@ function displayBars(){
 const sortBtn = document.querySelector("#sort-btn");
 
 async function animatedBubbleSort() {
+if (isSorting) return;
+isSorting = true;
+
     const n = sortArray.length;
 
     for (let i = 0; i < n -1; i++) {
@@ -187,6 +192,8 @@ async function animatedBubbleSort() {
             }
         }
     }
+
+    isSorting = false;
 }
 
 
