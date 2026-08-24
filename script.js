@@ -16,7 +16,7 @@ function generatePalette(){
 
     palette.innerHTML = "";
 
-    for(let i = 0; i < PALETTE_SIZEs; i++) {
+    for(let i = 0; i < PALETTE_SIZE; i++) {
         const colour = randomColour();
 
         const swatch = document.createElement("button");
@@ -136,8 +136,7 @@ function bubbleSort(arr){
     return arr;
 }
 
-const testArray = [3, 4, 1, 9, 6]
-console.log(bubbleSort(testArray));
+
 
 showQuestion();
 
@@ -150,7 +149,7 @@ let isSorting = false;
 
 function generateArray(){
     if (isSorting) return;
-    
+
     sortArray = [];
 
     for (let i=0; i < 20; i++) {
@@ -195,6 +194,34 @@ isSorting = true;
 
     isSorting = false;
 }
+
+function selectionSort(arr) {
+    const n = arr.length;
+
+    for (let i=0; i < n-1; i++){
+        let minIndex = i;
+    
+
+    for (let j = i+1 ; j < n; j++){
+        if (arr[j] < arr[minIndex]){
+            minIndex = j;
+        }
+    }
+
+    if (minIndex !== i) {
+        const temp = arr[i];
+
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp
+        
+     }
+
+    }
+
+    return arr;
+}
+
+selectionSort([2, 1, 5, 8, 3]);
 
 
 function sleep(ms){
