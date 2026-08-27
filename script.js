@@ -44,7 +44,8 @@ const generateBtn = document.querySelector("#generate-btn");
 generateBtn.addEventListener("click", generatePalette);
 
 
-const quizQuestions = [
+const quizQuestions = [ /* Try to make it that the quiz app updates itself automatically by generating a random set of quiz
+                        based the latest real world events */
     {
         text : "What does HTML stand for?",
         options : ["Hyper Text Markup Language", "High Tech Modern Look", "Hello To My Lamb"],
@@ -119,22 +120,7 @@ function showFinalScore() {
     }
 
 
-function bubbleSort(arr){
-    const n = arr.length;
 
-    for (let i = 0; i < n - 1; i++){
-        for (let j = 0; j < n - 1 - i; j++){
-            if(arr[j] > arr[j + 1]){
-
-                const temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-
-    return arr;
-}
 
 
 
@@ -195,40 +181,43 @@ isSorting = true;
     isSorting = false;
 }
 
-function selectionSort(arr) {
-    const n = arr.length;
 
-    for (let i=0; i < n-1; i++){
+ async function animatedSelectionSort(){
+
+    if (isSorting) return;
+    isSorting = true;
+
+    const n = sortArray.length;
+
+
+    for ( let i = 0; i < n-1; i++){
         let minIndex = i;
-    
-
-    for (let j = i+1 ; j < n; j++){
-        if (arr[j] < arr[minIndex]){
-            minIndex = j;
+        for (let j = i+1; j < n ; j++){
+            if (sortArray[j] < sortArray[minIndex]) {
+                minIndex = j;
+            }
         }
-    }
-
-    if (minIndex !== i) {
-        const temp = arr[i];
-
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp
-        
-     }
+        const temp = sortArray[i];
+        sortArray[i] = sortArray[minIndex];
+        sortArray[minIndex] = temp;
+        displayBars();
+        await sleep(50);
 
     }
 
-    return arr;
+    isSorting = false;
+
+
 }
 
-selectionSort([2, 1, 5, 8, 3]);
+
 
 
 function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-sortBtn.addEventListener("click", animatedBubbleSort);
+sortBtn.addEventListener("click", animatedSelectionSort);
 
 generateArrayBtn.addEventListener("click", generateArray);
 
