@@ -338,10 +338,16 @@ li span:hover {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s ease;
+
 }
+
 
 .sort-controls button:hover {
     background-color: rgba(25, 160, 240, 0.15);
+}
+
+.sort-controls button.active {
+  background-color: #1aa0f0;
 }
 
 /* -- LINKS -- */

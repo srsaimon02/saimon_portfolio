@@ -130,8 +130,12 @@ showQuestion();
 
 const sortBarsEl = document.querySelector("#sort-bars");
 const generateArrayBtn = document.querySelector("#generate-array-btn");
+const sortBtn = document.querySelector("#sort-btn");
+const bubbleSortBtn = document.querySelector("#bubble-sort");
+const selectionSortButton = document.querySelector("#selection-sort");
 let sortArray = [];
 let isSorting = false;
+let sortMethod = "BubbleSort";
 
 function generateArray(){
     if (isSorting) return;
@@ -153,11 +157,10 @@ function displayBars(){
         const bar = document.createElement("div");
         bar.classList.add("bar");
         bar.style.height = `${sortArray[i]}%`;
-        sortBarsEl.appendChild(bar);
+        sortBarsEl.appendChild(bar); //user should be able to move the bars around themselves to reshuffle how they like
     }
 }
 
-const sortBtn = document.querySelector("#sort-btn");
 
 async function animatedBubbleSort() {
 if (isSorting) return;
@@ -201,7 +204,7 @@ isSorting = true;
         sortArray[i] = sortArray[minIndex];
         sortArray[minIndex] = temp;
         displayBars();
-        await sleep(50);
+        await sleep(100);
 
     }
 
@@ -211,14 +214,40 @@ isSorting = true;
 }
 
 
-
-
 function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-sortBtn.addEventListener("click", animatedSelectionSort);
+
+bubbleSortBtn.addEventListener("click", function(){
+    sortMethod = "BubbleSort";
+    bubbleSortBtn.classList.add("active");
+    selectionSortButton.classList.remove("active");
+});
+  
+selectionSortButton.addEventListener("click", function(){
+    sortMethod = "SelectionSort";
+    selectionSortButton.classList.add("active");
+    bubbleSortBtn.classList.remove("active");
+});
+
+
+sortBtn.addEventListener("click", function(){
+    if(sortMethod === "BubbleSort"){
+        animatedBubbleSort();
+    }
+    else if(sortMethod === "SelectionSort"){
+        animatedSelectionSort();
+    }
+});
+
 
 generateArrayBtn.addEventListener("click", generateArray);
 
 generateArray();
+
+
+
+
+
+
