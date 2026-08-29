@@ -86,7 +86,11 @@
             <p>Watch these two sorting algorithms organise a random array in real-time.</p>
 
             <div class="sort-bars" id="sort-bars"></div>
-
+            <div class="speed-control">
+                <label for="speed-slider">Speed</label>
+                <input type="range" id="speed-slider" min="1" max="200" value="50"/>
+                <span id="speed-value">50ms</span>
+            </div>
             <div class="sort-controls">
                 <button id="generate-array-btn">New Array</button>
                 <button id="bubble-sort" class="active">Bubble Sort</button>

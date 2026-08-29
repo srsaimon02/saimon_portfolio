@@ -133,9 +133,12 @@ const generateArrayBtn = document.querySelector("#generate-array-btn");
 const sortBtn = document.querySelector("#sort-btn");
 const bubbleSortBtn = document.querySelector("#bubble-sort");
 const selectionSortButton = document.querySelector("#selection-sort");
+const speedSlider = document.querySelector("#speed-slider");
+const speedValueEl = document.querySelector("#speed-value");
 let sortArray = [];
 let isSorting = false;
 let sortMethod = "BubbleSort";
+let sortSpeed = 50;
 
 function generateArray(){
     if (isSorting) return;
@@ -176,7 +179,7 @@ isSorting = true;
                 sortArray[j+1] = temp;
 
                 displayBars();
-                await sleep(50); //add a slider to increase the speed or decrease
+                await sleep(sortSpeed); 
             }
         }
     }
@@ -204,7 +207,7 @@ isSorting = true;
         sortArray[i] = sortArray[minIndex];
         sortArray[minIndex] = temp;
         displayBars();
-        await sleep(100);
+        await sleep(sortSpeed);
 
     }
 
@@ -241,10 +244,17 @@ sortBtn.addEventListener("click", function(){
     }
 });
 
+speedSlider.addEventListener("input", function(){
+    sortSpeed = Number(speedSlider.value);
+    speedValueEl.textContent = `${sortSpeed}ms`;
+
+});
 
 generateArrayBtn.addEventListener("click", generateArray);
 
 generateArray();
+
+
 
 
 
