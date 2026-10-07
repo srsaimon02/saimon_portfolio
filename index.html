@@ -99,6 +99,59 @@
             </div>
         </section>
 
+        <!-- Binary Search Tree Visualiser -->
+
+        <section id="bst">
+            <h2>Binary Search Tree</h2>
+            <p>Insert numbers and watch the tree organise itself. Search to see the path light up.</p>
+
+            <div class="bst-canvas" id="bst-canvas"></div>
+
+            <div class="bst-controls">
+                <input type="number" id="bst-input" placeholder="Enter a number" min="1" max="99"/>
+                <button id="bst-insert">Insert</button>
+                <button id="bst-search">Search</button>
+                <button id="bst-random">Random Tree</button>
+                <button id="bst-clear">Clear</button>
+            </div>
+
+            <p class="bst-status" id="bst-status"></p>
+        </section>
+
+         <!-- Hash Table Explorer -->
+
+         <section id="hash">
+            <h2>Hash Table Explorer</h2>
+            <p>Add keys and watch them hash into slots. Collisions are handled by chaining.</p>
+
+            <div class="hash-table" id="hash-table"></div>
+
+            <div class="hash-controls">
+                <input type="text" id="hash-key" placeholder="Please enter a word"/>
+                <button id="hash-add">Add</button>
+                <button id="hash-find">Find</button>
+                <button id="hash-clear">Clear</button>
+            </div>
+
+            <p class="hash-status" id="hash-status"></p>
+         </section>
+
+         <!-- Pathfinding Visualiser -->
+          <section id="pathfinding">
+            <h2>Pathfinding Visualiser</h2>
+            <p>Click and drag to draw walls, then watch BFS find the shortest path.</p>
+
+            <div class="grid" id="grid"></div>
+
+            <div class="grid-controls">
+                <button id="find-path">Find Path</button>
+                <button id="clear-walls">Clear Walls</button>
+                <button id="reset-grid">Reset Grid</button>
+            </div>
+
+            <p class="grid-status" id="grid-status"></p>
+          </section>
+
 
         <!-- Projects -->
          <section id="projects">

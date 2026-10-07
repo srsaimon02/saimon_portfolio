@@ -375,6 +375,258 @@ li span:hover {
   background-color: #1aa0f0;
 }
 
+/* -- BINARY SEARCH TREE VISUALISER -- */
+
+.bst-canvas {
+    position: relative;
+    height: 340px;
+    margin: 24px 0;
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bst-node {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #0a1f3d;
+    border: 2px solid #1aa0f0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.bst-node.highlight {
+    background-color: #ffffff;
+    color: #071628;
+}
+
+
+
+.bst-node.current {
+    background-color: #1aa0f0;
+    border-color: #ffffff;
+    animation: popIn 0.3s ease forwards;
+}
+
+.bst-edge {
+    position: absolute;
+    height: 2px;
+    background-color: #1e3a5f;
+    transform-origin: 0 0;
+    z-index: 1;
+}
+
+.bst-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bst-controls input,
+.bst-controls button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #1aa0f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.bst-controls input {
+  width: 160px;
+  color-scheme: dark; /* TODO try and remove the arrows completely*/
+}
+
+.bst-controls button {
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bst-controls button:hover {
+  background-color: rgba(26, 160, 240, 0.15);
+}
+
+.bst-status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #94a8bc;
+    min-height: 22px;
+}
+
+/* -- HASH TABLE EXPLORER -- */
+
+.hash-table {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+}
+
+.hash-slot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+}
+
+.slot-index{
+    width: 36px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #94a8bc;
+    border: 1px solid #1e3a5f;
+    border-radius: 6px;
+    padding: 6px 0;
+}
+
+.slot-items {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.slot-entry {
+    background-color: #1e3a5f;
+    color: #93c5fd;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.slot-entry.found {
+    background-color: #1aa0f0;
+    color: #ffffff;
+}
+
+.hash-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hash-controls input,
+.hash-controls button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1aa0f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.hash-controls input {
+    width: 180px;
+}
+
+.hash-controls button {
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.hash-controls button:hover {
+    background-color: rgba(26, 160, 240, 0.15);
+}
+
+.hash-status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #94a8bc;
+    min-height: 22px
+}
+
+/* -- PATHFINDING VISUALISER -- */
+
+.grid {
+    display: grid;
+    gap: 2px;
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background-color: #0a1f3d;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: backgrpund-color 0.15s ease;
+}
+
+.cell:hover {
+    background-color: #1e3a5f;
+}
+
+.cell.wall {
+    background-color: #334155;
+}
+
+.cell.start {
+    background-color: #22c55e;
+}
+
+.cell.end {
+    background-color: #ef4444;
+}
+
+.cell.visited {
+    background-color: #1e3a5f;
+}
+
+.cell.path {
+    background-color: #1aa0f0;
+}
+
+.grid-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.grid-controls button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1aa0f0;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.grid-controls button:hover {
+    background-color: rgba(26, 160, 240, 0.15);
+}
+
+.grid-status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #94a8bc;
+    min-height: 22px;
+}
+
 /* -- LINKS -- */
 
 a {
@@ -433,6 +685,12 @@ nav a {
 }
 
 /* -- RESPONSIVE -- */
+
+@keyframes popIn {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+
 
 @media (max-width: 600px) {
     header {
